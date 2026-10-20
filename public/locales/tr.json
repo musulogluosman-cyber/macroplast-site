@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "products": "Ürünlerimiz",
+    "services": "Mühendislik & İmalat",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "title": "Endüstriyel Sızdırmazlıkta Üstün Mühendislik ve Güven",
+    "subtitle": "Yüksek sıcaklık, kimyasal direnç ve aşırı basınç gerektiren endüstriyel tesisler için %100 saf PTFE conta çözümleri üretiyoruz.",
+    "btn_catalog": "Ürün Kataloğunu İncele",
+    "btn_quote": "Teknik Danışmanlık Alın"
+  },
+  "stats": {
+    "experience": "25+ Yıllık Sektör Deneyimi",
+    "sizes": "1.500+ Standart & Özel Ölçü",
+    "delivery": "%99,8 Zamanında Teslimat",
+    "sectors": "40+ Hizmet Verilen Sektör"
+  },
+  "features": {
+    "temp": "Yüksek Sıcaklık Dayanımı (-200°C / +260°C)",
+    "tolerances": "Tornada Hassas İmalat (±0,1 mm tolerans)",
+    "traceability": "Hızlı Termin & Lot Bazlı İzlenebilirlik"
+  },
+  "products": {
+    "title": "Ana Ürün Gruplarımız",
+    "p1_title": "Asit ve Buhar Hattı PTFE Flanş Contaları",
+    "p1_desc": "Asit ve buhar hatları için tam sızdırmazlık sağlayan PTFE flanş contaları.",
+    "p2_title": "PTFE Burçlar ve Özel Talaşlı İmalat",
+    "p2_desc": "Müşteri teknik resmine göre özel talaşlı imalat ve burçlar.",
+    "p3_title": "Musluk ve Sıhhi Tesisat Contaları",
+    "p3_desc": "Gıda ve içme suyu uygulamaları için hijyenik sızdırmazlık.",
+    "btn_details": "Teknik Detaylar",
+    "btn_request": "Teklif İste"
+  },
+  "process": {
+    "title": "Teknik Resminizden Seri Üretime",
+    "step1_title": "01. Hızlı Prototipleme",
+    "step1_desc": "Özel ölçü ve teknik resme göre kısa sürede numune üretimi; DWG, DXF ve STEP dosyalarıyla doğrudan çalışma.",
+    "step2_title": "02. Tornada Hassas İmalat",
+    "step2_desc": "Torna tezgahlarımızda PTFE çubuk ve borulardan tekrarlanabilir, çapaksız ve dar toleranslı parça üretimi."
+  },
+  "contact": {
+    "title": "İletişim Bilgileri",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "hours": "Çalışma Saatleri",
+    "hours_val": "Pazartesi – Cuma: 08:00 – 18:00",
+    "address": "Adres",
+    "address_val": "Çınardere Mh. Acar Sk. No:6/A Pendik / İstanbul / Türkiye"
+  }
+}

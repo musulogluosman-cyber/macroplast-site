@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "services": "Engineering & Manufacturing",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "Superior Engineering & Reliability in Industrial Sealing",
+    "subtitle": "We manufacture 100% pure PTFE gasket solutions for industrial plants requiring high temperature, chemical resistance, and extreme pressure.",
+    "btn_catalog": "View Product Catalog",
+    "btn_quote": "Get Technical Advisory"
+  },
+  "stats": {
+    "experience": "25+ Years Industry Experience",
+    "sizes": "1,500+ Standard & Custom Sizes",
+    "delivery": "99.8% On-Time Delivery Rate",
+    "sectors": "40+ Served Industries"
+  },
+  "features": {
+    "temp": "High Temperature Resistance (-200°C / +260°C)",
+    "tolerances": "Precision Lathe Manufacturing (±0.1 mm tolerance)",
+    "traceability": "Fast Delivery & Lot-Based Traceability"
+  },
+  "products": {
+    "title": "Our Main Product Lines",
+    "p1_title": "PTFE Flange Gaskets for Acid & Steam Lines",
+    "p1_desc": "PTFE flange gaskets providing complete sealing for harsh acid and high-pressure steam lines.",
+    "p2_title": "PTFE Bushings & Custom Machined Parts",
+    "p2_desc": "Custom CNC machining and PTFE bushings according to customer technical drawings.",
+    "p3_title": "Sanitary & Plumbing Gaskets",
+    "p3_desc": "Hygienic sealing solutions approved for food and drinking water applications.",
+    "btn_details": "Technical Details",
+    "btn_request": "Request Quote"
+  },
+  "process": {
+    "title": "From Technical Drawing to Mass Production",
+    "step1_title": "01. Rapid Prototyping",
+    "step1_desc": "Fast sample production from custom dimensions and technical drawings; direct compatibility with DWG, DXF, and STEP files.",
+    "step2_title": "02. Precision Lathe Machining",
+    "step2_desc": "Repeatable, burr-free, tight-tolerance component production from PTFE rods and tubes."
+  },
+  "contact": {
+    "title": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "hours": "Working Hours",
+    "hours_val": "Monday – Friday: 08:00 – 18:00",
+    "address": "Address",
+    "address_val": "Cinardere Mh. Acar Sk. No:6/A Pendik / Istanbul / Turkey"
+  }
+}

@@ -1,5 +1,5 @@
 'use client'
-
+import { useLanguage } from '@/context/LanguageContext'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Logo } from './logo'
@@ -7,6 +7,7 @@ import { navLinks } from '@/lib/site-data'
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const { lang, switchLanguage, t } = useLanguage()
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-md">
@@ -28,13 +29,41 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          {/* TR / EN Dil Değiştirici Butonlar (Masaüstü) */}
+          <div className="flex items-center rounded-md border border-border bg-secondary/50 p-1 text-xs font-semibold">
+            <button
+              type="button"
+              onClick={() => switchLanguage('tr')}
+              className={`rounded px-2 py-1 transition-all ${
+                lang === 'tr'
+                  ? 'bg-accent text-accent-foreground shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              TR
+            </button>
+            <span className="px-1 text-border">|</span>
+            <button
+              type="button"
+              onClick={() => switchLanguage('en')}
+              className={`rounded px-2 py-1 transition-all ${
+                lang === 'en'
+                  ? 'bg-accent text-accent-foreground shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              EN
+            </button>
+          </div>
+
           <a
             href="#iletisim"
             className="hidden rounded-md bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-sm transition-colors hover:bg-amber-accent sm:inline-flex"
           >
-            Teklif Alın
+            {t('hero.btn_quote') || 'Teklif Alın'}
           </a>
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -62,13 +91,49 @@ export function SiteHeader() {
                 </a>
               </li>
             ))}
+
+            {/* Mobil Menü İçin Dil Değiştirici */}
+            <li className="flex items-center justify-between border-t border-border pt-3 mt-2">
+              <span className="text-sm font-medium text-muted-foreground">Dil / Language:</span>
+              <div className="flex items-center rounded-md border border-border bg-secondary p-1 text-xs font-semibold">
+                <button
+                  type="button"
+                  onClick={() => {
+                    switchLanguage('tr')
+                    setOpen(false)
+                  }}
+                  className={`rounded px-3 py-1.5 transition-all ${
+                    lang === 'tr'
+                      ? 'bg-accent text-accent-foreground shadow-sm'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  Türkçe (TR)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    switchLanguage('en')
+                    setOpen(false)
+                  }}
+                  className={`rounded px-3 py-1.5 transition-all ${
+                    lang === 'en'
+                      ? 'bg-accent text-accent-foreground shadow-sm'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  English (EN)
+                </button>
+              </div>
+            </li>
+
             <li className="pt-2">
               <a
                 href="#iletisim"
                 onClick={() => setOpen(false)}
                 className="block rounded-md bg-accent px-4 py-3 text-center text-base font-semibold text-accent-foreground"
               >
-                Teklif Alın
+                {t('hero.btn_quote') || 'Teklif Alın'}
               </a>
             </li>
           </ul>

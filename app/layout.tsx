@@ -48,7 +48,9 @@ export default function RootLayout({
   return (
     <html lang="tr" className={`${plexSans.variable} ${plexMono.variable}`}>
       <body className="antialiased">
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

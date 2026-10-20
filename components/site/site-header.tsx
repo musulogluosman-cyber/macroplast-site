@@ -1,5 +1,5 @@
 'use client'
-import { useLanguage } from '@/context/LanguageContext'
+import { useLanguage } from '../../app/context/LanguageContext'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Logo } from './logo'

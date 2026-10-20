@@ -1,19 +1,30 @@
+"use client";
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const LanguageContext = createContext();
+interface LanguageContextType {
+  lang: string;
+  switchLanguage: (newLang: string) => void;
+  t: (path: string) => string;
+}
 
-export function LanguageProvider({ children }) {
+const LanguageContext = createContext<LanguageContextType>({
+  lang: 'tr',
+  switchLanguage: () => {},
+  t: (path) => path,
+});
+
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLang] = useState('tr');
-  const [translations, setTranslations] = useState({});
+  const [translations, setTranslations] = useState<Record<string, any>>({});
 
   useEffect(() => {
-    // Tarayıcı hafızasındaki dili kontrol et
     const savedLang = localStorage.getItem('site_lang') || 'tr';
     setLang(savedLang);
     loadTranslations(savedLang);
   }, []);
 
-  const loadTranslations = async (targetLang) => {
+  const loadTranslations = async (targetLang: string) => {
     try {
       const res = await fetch(`/locales/${targetLang}.json`);
       const data = await res.json();
@@ -23,15 +34,14 @@ export function LanguageProvider({ children }) {
     }
   };
 
-  const switchLanguage = (newLang) => {
+  const switchLanguage = (newLang: string) => {
     setLang(newLang);
     localStorage.setItem('site_lang', newLang);
     loadTranslations(newLang);
   };
 
-  // Metin çekme yardımcısı (Örn: t('nav.home'))
-  const t = (path) => {
-    return path.split('.').reduce((obj, key) => obj?.[key], translations) || path;
+  const t = (path: string) => {
+    return path.split('.').reduce((obj, key) => obj?.[key], translations) as unknown as string || path;
   };
 
   return (

@@ -1,4 +1,4 @@
-import { LanguageProvider } from './context/LanguageContext' 
+import { LanguageProvider } from '@/context/LanguageContext'
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'

@@ -42,12 +42,46 @@
     "step2_desc": "Torna tezgahlarımızda PTFE çubuk ve borulardan tekrarlanabilir, çapaksız ve dar toleranslı parça üretimi."
   },
   "contact": {
-    "title": "İletişim Bilgileri",
+    "badge": "Teklif & İletişim",
+    "title": "Projeniz için teklif alın",
+    "description": "Ölçü, malzeme ve çalışma koşullarını paylaşın; mühendis ekibimiz 1 iş günü içinde size dönüş yapsın.",
     "email": "E-posta",
     "phone": "Telefon",
     "hours": "Çalışma Saatleri",
-    "hours_val": "Pazartesi – Cuma: 08:00 – 18:00",
     "address": "Adres",
-    "address_val": "Çınardere Mh. Acar Sk. No:6/A Pendik / İstanbul / Türkiye"
+    "info_title": "İletişim Bilgileri",
+    "urgent_note": "Acil arıza ve duruş durumlarında telefonla ulaşarak öncelikli üretim talep edebilirsiniz."
+  },
+  {
+  "nav": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "products": "Ürünler",
+    "contact": "İletişim"
+  },
+  "about": {
+    "badge": "Hakkımızda",
+    "title": "Kritik hatlar için tasarlanmış PTFE çözümleri",
+    "description": "Macroplast Hazar, yüksek performanslı PTFE (Teflon) contalar, burçlar ve özel sızdırmazlık elemanları üreten bir mühendislik ve imalat firmasıdır. Agresif kimyasallar, yüksek sıcaklık ve basınç altında çalışan tesislerin güvenliği için ölçülebilir kaliteyle üretiyoruz.",
+    "stats": {
+      "experience": "Yıllık sektör deneyimi",
+      "sizes": "Standart & özel ölçü",
+      "delivery": "Zamanında teslimat oranı",
+      "sectors": "Hizmet verilen sektör"
+    },
+    "pillar1": {
+      "title": "Kendi Üretim Tesisimiz",
+      "text": "Hammaddeden son ürüne tüm süreç tek çatı altında, tam kontrolle."
+    },
+    "pillar2": {
+      "title": "Mühendis Kadrosu",
+      "text": "Uygulamaya özel malzeme seçimi ve tasarım desteği sunan teknik ekip."
+    },
+    "pillar3": {
+      "title": "Geniş Sektör Ağı",
+      "text": "Kimya, petrokimya, gıda, ilaç, enerji ve su arıtma tesisleri."
+    }
   }
+}
+  
 }

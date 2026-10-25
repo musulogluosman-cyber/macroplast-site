@@ -42,12 +42,45 @@
     "step2_desc": "Repeatable, burr-free, tight-tolerance component production from PTFE rods and tubes."
   },
   "contact": {
-    "title": "Contact Information",
+    "badge": "Quote & Contact",
+    "title": "Get a Quote for Your Project",
+    "description": "Share your dimensions, material requirements, and operating conditions; our engineering team will get back to you within 1 business day.",
     "email": "Email",
     "phone": "Phone",
     "hours": "Working Hours",
-    "hours_val": "Monday – Friday: 08:00 – 18:00",
     "address": "Address",
-    "address_val": "Cinardere Mh. Acar Sk. No:6/A Pendik / Istanbul / Turkey"
+    "info_title": "Contact Information",
+    "urgent_note": "For urgent breakdowns and stoppages, you can call us directly to request priority production."
+  },
+  {
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact"
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "PTFE Solutions Designed for Critical Lines",
+    "description": "Macroplast Hazar is an engineering and manufacturing company producing high-performance PTFE (Teflon) gaskets, bushings, and custom sealing elements. We manufacture with measurable quality for the safety of facilities operating under aggressive chemicals, high temperature, and pressure.",
+    "stats": {
+      "experience": "Years of industry experience",
+      "sizes": "Standard & custom sizes",
+      "delivery": "On-time delivery rate",
+      "sectors": "Sectors served"
+    },
+    "pillar1": {
+      "title": "In-House Manufacturing",
+      "text": "Complete control from raw material to final product under one roof."
+    },
+    "pillar2": {
+      "title": "Engineering Team",
+      "text": "Technical team offering application-specific material selection and design support."
+    },
+    "pillar3": {
+      "title": "Broad Industry Network",
+      "text": "Chemical, petrochemical, food, pharmaceutical, energy, and water treatment plants."
+    }
   }
+}
 }

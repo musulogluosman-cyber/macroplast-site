@@ -3,11 +3,17 @@ import { useLanguage } from '../../app/LanguageContext'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Logo } from './logo'
-import { navLinks } from '@/lib/site-data'
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const { lang, switchLanguage, t } = useLanguage()
+
+  const navLinks = [
+    { href: '#', label: t('nav.home') || 'Anasayfa' },
+    { href: '#hakkimizda', label: t('nav.about') || 'Hakkımızda' },
+    { href: '#urunler', label: t('nav.products') || 'Ürünler' },
+    { href: '#iletisim', label: t('nav.contact') || 'İletişim' },
+  ]
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-md">

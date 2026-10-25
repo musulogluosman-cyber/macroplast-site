@@ -5,6 +5,7 @@ import { CheckCircle2, Loader2, Send } from 'lucide-react'
 import { submitRfq, type RfqState } from '@/app/actions'
 import { productGroups, RFQ_SELECT_EVENT } from '@/lib/site-data'
 import { cn } from '@/lib/utils'
+import { useLanguage } from '../../app/LanguageContext'
 
 const initialState: RfqState = { status: 'idle' }
 
@@ -49,6 +50,7 @@ function Field({
 export function RfqForm() {
   const [state, formAction, pending] = useActionState(submitRfq, initialState)
   const [product, setProduct] = useState('')
+  const { lang, t } = useLanguage()
 
   useEffect(() => {
     const onSelect = (e: Event) => setProduct((e as CustomEvent<string>).detail)
@@ -62,7 +64,9 @@ export function RfqForm() {
         <span className="flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary">
           <CheckCircle2 className="size-7" aria-hidden="true" />
         </span>
-        <h3 className="mt-5 text-xl font-semibold">Talebiniz iletildi</h3>
+        <h3 className="mt-5 text-xl font-semibold">
+          {t('rfq.success_title') || (lang === 'en' ? 'Your request has been sent' : 'Talebiniz iletildi')}
+        </h3>
         <p className="mt-2 max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">{state.message}</p>
       </div>
     )
@@ -76,25 +80,61 @@ export function RfqForm() {
       noValidate
       className="grid gap-5 sm:grid-cols-2"
       onSubmit={(ev) => {
-        // Submitting via a transition avoids React's automatic form reset, so input survives validation errors.
         ev.preventDefault()
         const data = new FormData(ev.currentTarget)
         startTransition(() => formAction(data))
       }}
     >
-      <Field id="name" label="Ad Soyad" required error={e.name}>
-        <input id="name" name="name" autoComplete="name" required className={inputClass} placeholder="Adınız Soyadınız" {...describe('name')} />
+      <Field id="name" label={t('rfq.name') || (lang === 'en' ? 'Full Name' : 'Ad Soyad')} required error={e.name}>
+        <input 
+          id="name" 
+          name="name" 
+          autoComplete="name" 
+          required 
+          className={inputClass} 
+          placeholder={t('rfq.name_placeholder') || (lang === 'en' ? 'Your Full Name' : 'Adınız Soyadınız')} 
+          {...describe('name')} 
+        />
       </Field>
-      <Field id="company" label="Şirket Adı" required error={e.company}>
-        <input id="company" name="company" autoComplete="organization" required className={inputClass} placeholder="Firma Ünvanı" {...describe('company')} />
+
+      <Field id="company" label={t('rfq.company') || (lang === 'en' ? 'Company Name' : 'Şirket Adı')} required error={e.company}>
+        <input 
+          id="company" 
+          name="company" 
+          autoComplete="organization" 
+          required 
+          className={inputClass} 
+          placeholder={t('rfq.company_placeholder') || (lang === 'en' ? 'Company Title' : 'Firma Ünvanı')} 
+          {...describe('company')} 
+        />
       </Field>
-      <Field id="email" label="E-posta" required error={e.email}>
-        <input id="email" name="email" type="email" autoComplete="email" required className={inputClass} placeholder="ornek@firma.com.tr" {...describe('email')} />
+
+      <Field id="email" label={t('rfq.email') || (lang === 'en' ? 'Email' : 'E-posta')} required error={e.email}>
+        <input 
+          id="email" 
+          name="email" 
+          type="email" 
+          autoComplete="email" 
+          required 
+          className={inputClass} 
+          placeholder={t('rfq.email_placeholder') || 'ornek@firma.com.tr'} 
+          {...describe('email')} 
+        />
       </Field>
-      <Field id="phone" label="Telefon" error={e.phone}>
-        <input id="phone" name="phone" type="tel" autoComplete="tel" className={inputClass} placeholder="+90 5XX XXX XX XX" {...describe('phone')} />
+
+      <Field id="phone" label={t('rfq.phone') || (lang === 'en' ? 'Phone' : 'Telefon')} error={e.phone}>
+        <input 
+          id="phone" 
+          name="phone" 
+          type="tel" 
+          autoComplete="tel" 
+          className={inputClass} 
+          placeholder="+90 5XX XXX XX XX" 
+          {...describe('phone')} 
+        />
       </Field>
-      <Field id="product" label="İlgilenilen Ürün Grubu" required error={e.product} className="sm:col-span-2">
+
+      <Field id="product" label={t('rfq.product_group') || (lang === 'en' ? 'Product Group of Interest' : 'İlgilenilen Ürün Grubu')} required error={e.product} className="sm:col-span-2">
         <select
           id="product"
           name="product"
@@ -105,7 +145,7 @@ export function RfqForm() {
           {...describe('product')}
         >
           <option value="" disabled>
-            Ürün grubu seçin
+            {t('rfq.select_product') || (lang === 'en' ? 'Select a product group' : 'Ürün grubu seçin')}
           </option>
           {productGroups.map((g) => (
             <option key={g} value={g}>
@@ -114,21 +154,26 @@ export function RfqForm() {
           ))}
         </select>
       </Field>
-      <Field id="message" label="Mesaj / Teknik Çizim Notu" required error={e.message} className="sm:col-span-2">
+
+      <Field id="message" label={t('rfq.message') || (lang === 'en' ? 'Message / Technical Drawing Note' : 'Mesaj / Teknik Çizim Notu')} required error={e.message} className="sm:col-span-2">
         <textarea
           id="message"
           name="message"
           rows={5}
           required
           className={cn(inputClass, 'resize-y')}
-          placeholder="Ölçüler (DN, iç/dış çap, kalınlık), adet, çalışma sıcaklığı, basınç ve akışkan bilgisi..."
+          placeholder={t('rfq.message_placeholder') || (lang === 'en' ? 'Dimensions (DN, inner/outer diameter, thickness), quantity, operating temperature, pressure and fluid info...' : 'Ölçüler (DN, iç/dış çap, kalınlık), adet, çalışma sıcaklığı, basınç ve akışkan bilgisi...')}
           {...describe('message')}
         />
       </Field>
 
       <div className="flex flex-col-reverse gap-4 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-muted-foreground" aria-live="polite">
-          {state.status === 'error' ? <span className="text-destructive">{state.message}</span> : 'Bilgileriniz yalnızca teklif hazırlamak için kullanılır.'}
+          {state.status === 'error' ? (
+            <span className="text-destructive">{state.message}</span>
+          ) : (
+            t('rfq.privacy_note') || (lang === 'en' ? 'Your information is used solely for quote preparation.' : 'Bilgileriniz yalnızca teklif hazırlamak için kullanılır.')
+          )}
         </p>
         <button
           type="submit"
@@ -136,7 +181,7 @@ export function RfqForm() {
           className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-navy disabled:opacity-70"
         >
           {pending ? <Loader2 className="size-4 animate-spin" aria-hidden="true" /> : <Send className="size-4" aria-hidden="true" />}
-          Teklif Talep Et
+          {t('rfq.submit_btn') || (lang === 'en' ? 'Request a Quote' : 'Teklif Talep Et')}
         </button>
       </div>
     </form>

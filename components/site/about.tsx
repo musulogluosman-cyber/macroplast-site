@@ -1,32 +1,49 @@
+'use client'
+
 import { Factory, Users, Globe2 } from 'lucide-react'
-
-const stats = [
-  { value: '25+', label: 'Yıllık sektör deneyimi' },
-  { value: '1.500+', label: 'Standart & özel ölçü' },
-  { value: '%99,8', label: 'Zamanında teslimat oranı' },
-  { value: '40+', label: 'Hizmet verilen sektör' },
-]
-
-const pillars = [
-  { icon: Factory, title: 'Kendi Üretim Tesisimiz', text: 'Hammaddeden son ürüne tüm süreç tek çatı altında, tam kontrolle.' },
-  { icon: Users, title: 'Mühendis Kadrosu', text: 'Uygulamaya özel malzeme seçimi ve tasarım desteği sunan teknik ekip.' },
-  { icon: Globe2, title: 'Geniş Sektör Ağı', text: 'Kimya, petrokimya, gıda, ilaç, enerji ve su arıtma tesisleri.' },
-]
+import { useLanguage } from '../../app/LanguageContext'
 
 export function About() {
+  const { t } = useLanguage()
+
+  const stats = [
+    { value: '25+', label: t('about.stats.experience') || 'Yıllık sektör deneyimi' },
+    { value: '1.500+', label: t('about.stats.sizes') || 'Standart & özel ölçü' },
+    { value: '%99,8', label: t('about.stats.delivery') || 'Zamanında teslimat oranı' },
+    { value: '40+', label: t('about.stats.sectors') || 'Hizmet verilen sektör' },
+  ]
+
+  const pillars = [
+    { 
+      icon: Factory, 
+      title: t('about.pillar1.title') || 'Kendi Üretim Tesisimiz', 
+      text: t('about.pillar1.text') || 'Hammaddeden son ürüne tüm süreç tek çatı altında, tam kontrolle.' 
+    },
+    { 
+      icon: Users, 
+      title: t('about.pillar2.title') || 'Mühendis Kadrosu', 
+      text: t('about.pillar2.text') || 'Uygulamaya özel malzeme seçimi ve tasarım desteği sunan teknik ekip.' 
+    },
+    { 
+      icon: Globe2, 
+      title: t('about.pillar3.title') || 'Geniş Sektör Ağı', 
+      text: t('about.pillar3.text') || 'Kimya, petrokimya, gıda, ilaç, enerji ve su arıtma tesisleri.' 
+    },
+  ]
+
   return (
     <section id="hakkimizda" className="py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">Hakkımızda</p>
+            <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
+              {t('about.badge') || 'Hakkımızda'}
+            </p>
             <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl">
-              Kritik hatlar için tasarlanmış PTFE çözümleri
+              {t('about.title') || 'Kritik hatlar için tasarlanmış PTFE çözümleri'}
             </h2>
             <p className="mt-5 text-pretty leading-relaxed text-muted-foreground">
-              Macroplast Hazar, yüksek performanslı PTFE (Teflon) contalar, burçlar ve özel sızdırmazlık
-              elemanları üreten bir mühendislik ve imalat firmasıdır. Agresif kimyasallar, yüksek sıcaklık ve basınç
-              altında çalışan tesislerin güvenliği için ölçülebilir kaliteyle üretiyoruz.
+              {t('about.description') || 'Macroplast Hazar, yüksek performanslı PTFE (Teflon) contalar, burçlar ve özel sızdırmazlık elemanları üreten bir mühendislik ve imalat firmasıdır. Agresif kimyasallar, yüksek sıcaklık ve basınç altında çalışan tesislerin güvenliği için ölçülebilir kaliteyle üretiyoruz.'}
             </p>
             <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border">
               {stats.map((s) => (

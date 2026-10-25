@@ -1,34 +1,46 @@
+'use client'
+
 import Image from 'next/image'
 import { PenTool, Cog } from 'lucide-react'
-
-const features = [
-  {
-    icon: PenTool,
-    title: 'Hızlı Prototipleme',
-    text: 'Özel ölçü ve teknik resme göre kısa sürede numune üretimi; DWG, DXF ve STEP dosyalarıyla doğrudan çalışma.',
-  },
-  {
-    icon: Cog,
-    title: 'Tornada Hassas İmalat',
-    text: 'Torna tezgahlarımızda PTFE çubuk ve borulardan tekrarlanabilir, çapaksız ve dar toleranslı parça üretimi.',
-  },
-]
-
-const steps = ['Teknik Analiz', 'Malzeme Seçimi', 'Prototip', 'Numune Onayı', 'Seri Üretim']
+import { useLanguage } from '../../app/LanguageContext'
 
 export function Engineering() {
+  const { t } = useLanguage()
+
+  const features = [
+    {
+      icon: PenTool,
+      title: t('engineering.feature1.title') || 'Hızlı Prototipleme',
+      text: t('engineering.feature1.text') || 'Özel ölçü ve teknik resme göre kısa sürede numune üretimi; DWG, DXF ve STEP dosyalarıyla doğrudan çalışma.',
+    },
+    {
+      icon: Cog,
+      title: t('engineering.feature2.title') || 'Tornada Hassas İmalat',
+      text: t('engineering.feature2.text') || 'Torna tezgahlarımızda PTFE çubuk ve borulardan tekrarlanabilir, çapaksız ve dar toleranslı parça üretimi.',
+    },
+  ]
+
+  const steps = [
+    t('engineering.step1') || 'Teknik Analiz',
+    t('engineering.step2') || 'Malzeme Seçimi',
+    t('engineering.step3') || 'Prototip',
+    t('engineering.step4') || 'Numune Onayı',
+    t('engineering.step5') || 'Seri Üretim',
+  ]
+
   return (
     <section id="muhendislik" className="py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-5 lg:gap-16">
           <div className="lg:col-span-2 lg:sticky lg:top-24">
-            <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">Mühendislik & Kalite</p>
+            <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
+              {t('engineering.badge') || 'Mühendislik & Kalite'}
+            </p>
             <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight sm:text-4xl">
-              Teknik resminizden seri üretime
+              {t('engineering.title') || 'Teknik resminizden seri üretime'}
             </h2>
             <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-              Her sızdırmazlık problemi farklıdır. Uygulama koşullarınızı analiz eder, doğru malzemeyi seçer ve
-              ölçülebilir kaliteyle üretiriz.
+              {t('engineering.description') || 'Her sızdırmazlık problemi farklıdır. Uygulama koşullarınızı analiz eder, doğru malzemeyi seçer ve ölçülebilir kaliteyle üretiriz.'}
             </p>
           </div>
 
@@ -52,7 +64,9 @@ export function Engineering() {
             </ul>
 
             <div className="mt-8 rounded-xl bg-navy p-6 text-navy-foreground sm:p-8">
-              <h3 className="font-mono text-xs uppercase tracking-widest text-amber-accent">Üretim Süreci</h3>
+              <h3 className="font-mono text-xs uppercase tracking-widest text-amber-accent">
+                {t('engineering.process_title') || 'Üretim Süreci'}
+              </h3>
               <ol className="mt-6 grid gap-4 sm:grid-cols-5">
                 {steps.map((step, i) => (
                   <li key={step} className="flex items-center gap-3 sm:flex-col sm:items-start">
@@ -64,7 +78,7 @@ export function Engineering() {
                 ))}
               </ol>
               <p className="mt-6 border-t border-navy-foreground/10 pt-5 text-sm text-navy-foreground/70">
-                Kalite yönetim sistemimiz ISO 9001 standartlarına uygun olarak yürütülmektedir.
+                {t('engineering.quality_note') || 'Kalite yönetim sistemimiz ISO 9001 standartlarına uygun olarak yürütülmektedir.'}
               </p>
             </div>
           </div>

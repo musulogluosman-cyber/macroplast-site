@@ -7,10 +7,30 @@
     "contact": "Contact Us"
   },
   "hero": {
+    "tagline": "PTFE Sealing Expert",
     "title": "Superior Engineering & Reliability in Industrial Sealing",
+    "title_prefix": "Superior Engineering",
+    "title_highlight": "and Trust",
+    "title_suffix": "in Industrial Sealing",
     "subtitle": "We manufacture 100% pure PTFE gasket solutions for industrial plants requiring high temperature, chemical resistance, and extreme pressure.",
+    "description": "We manufacture 100% virgin PTFE gasket solutions for industrial facilities requiring high temperature, chemical resistance, and extreme pressure.",
     "btn_catalog": "View Product Catalog",
-    "btn_quote": "Get Technical Advisory"
+    "btn_consulting": "Get Technical Advisory",
+    "btn_quote": "Get a Quote",
+    "material_label": "Material",
+    "material_value": "100% Virgin PTFE",
+    "badge1": {
+      "title": "High Temperature Resistance",
+      "detail": "-200°C / +260°C"
+    },
+    "badge2": {
+      "title": "Precision Lathe Manufacturing",
+      "detail": "±0.1 mm tolerance"
+    },
+    "badge3": {
+      "title": "Fast Lead Time & Quality Assurance",
+      "detail": "Lot-based traceability"
+    }
   },
   "stats": {
     "experience": "25+ Years Industry Experience",
@@ -22,42 +42,6 @@
     "temp": "High Temperature Resistance (-200°C / +260°C)",
     "tolerances": "Precision Lathe Manufacturing (±0.1 mm tolerance)",
     "traceability": "Fast Delivery & Lot-Based Traceability"
-  },
-  "products": {
-    "title": "Our Main Product Lines",
-    "p1_title": "PTFE Flange Gaskets for Acid & Steam Lines",
-    "p1_desc": "PTFE flange gaskets providing complete sealing for harsh acid and high-pressure steam lines.",
-    "p2_title": "PTFE Bushings & Custom Machined Parts",
-    "p2_desc": "Custom CNC machining and PTFE bushings according to customer technical drawings.",
-    "p3_title": "Sanitary & Plumbing Gaskets",
-    "p3_desc": "Hygienic sealing solutions approved for food and drinking water applications.",
-    "btn_details": "Technical Details",
-    "btn_request": "Request Quote"
-  },
-  "process": {
-    "title": "From Technical Drawing to Mass Production",
-    "step1_title": "01. Rapid Prototyping",
-    "step1_desc": "Fast sample production from custom dimensions and technical drawings; direct compatibility with DWG, DXF, and STEP files.",
-    "step2_title": "02. Precision Lathe Machining",
-    "step2_desc": "Repeatable, burr-free, tight-tolerance component production from PTFE rods and tubes."
-  },
-  "contact": {
-    "badge": "Quote & Contact",
-    "title": "Get a Quote for Your Project",
-    "description": "Share your dimensions, material requirements, and operating conditions; our engineering team will get back to you within 1 business day.",
-    "email": "Email",
-    "phone": "Phone",
-    "hours": "Working Hours",
-    "address": "Address",
-    "info_title": "Contact Information",
-    "urgent_note": "For urgent breakdowns and stoppages, you can call us directly to request priority production."
-  },
-  {
-  "nav": {
-    "home": "Home",
-    "about": "About Us",
-    "products": "Products",
-    "contact": "Contact"
   },
   "about": {
     "badge": "About Us",
@@ -81,6 +65,84 @@
       "title": "Broad Industry Network",
       "text": "Chemical, petrochemical, food, pharmaceutical, energy, and water treatment plants."
     }
+  },
+  "products": {
+    "badge": "Products",
+    "title": "Our Main Product Lines",
+    "description": "From standard catalog sizes to custom manufacturing, the right PTFE solution for every application.",
+    "custom_link": "Can't find the size you need? Request custom manufacturing →",
+    "p1_title": "PTFE Flange Gaskets for Acid & Steam Lines",
+    "p1_desc": "PTFE flange gaskets providing complete sealing for harsh acid and high-pressure steam lines.",
+    "p2_title": "PTFE Bushings & Custom Machined Parts",
+    "p2_desc": "Custom CNC machining and PTFE bushings according to customer technical drawings.",
+    "p3_title": "Sanitary & Plumbing Gaskets",
+    "p3_desc": "Hygienic sealing solutions approved for food and drinking water applications."
+  },
+  "product": {
+    "btn_specs": "Technical Details",
+    "btn_quote": "Request Quote"
+  },
+  "engineering": {
+    "badge": "Engineering & Quality",
+    "title": "From Your Technical Drawing to Mass Production",
+    "description": "Every sealing problem is unique. We analyze your application conditions, select the right material, and manufacture with measurable quality.",
+    "feature1": {
+      "title": "Rapid Prototyping",
+      "text": "Sample production in a short time based on custom dimensions and technical drawings; direct work with DWG, DXF, and STEP files."
+    },
+    "feature2": {
+      "title": "Precision Lathe Manufacturing",
+      "text": "Repeatable, burr-free, and tight-tolerance component production from PTFE rods and tubes on our lathes."
+    },
+    "process_title": "Manufacturing Process",
+    "step1": "Technical Analysis",
+    "step2": "Material Selection",
+    "step3": "Prototype",
+    "step4": "Sample Approval",
+    "step5": "Mass Production",
+    "quality_note": "Our quality management system is operated in compliance with ISO 9001 standards."
+  },
+  "process": {
+    "title": "From Technical Drawing to Mass Production",
+    "step1_title": "01. Rapid Prototyping",
+    "step1_desc": "Fast sample production from custom dimensions and technical drawings; direct compatibility with DWG, DXF, and STEP files.",
+    "step2_title": "02. Precision Lathe Machining",
+    "step2_desc": "Repeatable, burr-free, tight-tolerance component production from PTFE rods and tubes."
+  },
+  "contact": {
+    "badge": "Quote & Contact",
+    "title": "Get a Quote for Your Project",
+    "description": "Share your dimensions, material requirements, and operating conditions; our engineering team will get back to you within 1 business day.",
+    "email": "Email",
+    "phone": "Phone",
+    "hours": "Working Hours",
+    "address": "Address",
+    "info_title": "Contact Information",
+    "urgent_note": "For urgent breakdowns and stoppages, you can call us directly to request priority production."
+  },
+  "rfq": {
+    "success_title": "Your request has been sent",
+    "name": "Full Name",
+    "name_placeholder": "Your Full Name",
+    "company": "Company Name",
+    "company_placeholder": "Company Title",
+    "email": "Email",
+    "phone": "Phone",
+    "product_group": "Product Group of Interest",
+    "select_product": "Select a product group",
+    "message": "Message / Technical Drawing Note",
+    "message_placeholder": "Dimensions (DN, inner/outer diameter, thickness), quantity, operating temperature, pressure and fluid info...",
+    "privacy_note": "Your information is used solely for quote preparation.",
+    "submit_btn": "Request a Quote"
+  },
+  "footer": {
+    "description": "High-performance PTFE gaskets, bushings, and custom sealing solutions.",
+    "quick_links": "Quick Links",
+    "products": "Products",
+    "quality_contact": "Quality & Contact",
+    "iso": "ISO 9001 Quality Management System",
+    "rights": "© 2026 Macroplast Hazar. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "kvkk": "KVKK Clarification Text"
   }
-}
 }

@@ -122,13 +122,14 @@
     "info_title": "İletişim Bilgileri",
     "urgent_note": "Acil arıza ve duruş durumlarında telefonla ulaşarak öncelikli üretim talep edebilirsiniz."
   },
-  "rfq": {
+ "rfq": {
     "success_title": "Talebiniz iletildi",
     "name": "Ad Soyad",
     "name_placeholder": "Adınız Soyadınız",
     "company": "Şirket Adı",
     "company_placeholder": "Firma Ünvanı",
     "email": "E-posta",
+    "email_placeholder": "ornek@firma.com.tr",
     "phone": "Telefon",
     "product_group": "İlgilenilen Ürün Grubu",
     "select_product": "Ürün grubu seçin",

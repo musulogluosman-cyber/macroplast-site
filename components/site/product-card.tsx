@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { ChevronDown, Send } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { RFQ_SELECT_EVENT, type ProductGroup } from '@/lib/site-data'
+import { useLanguage } from '../../app/LanguageContext'
 
 export type Product = {
   id: string
@@ -19,6 +20,7 @@ export type Product = {
 export function ProductCard({ product }: { product: Product }) {
   const [open, setOpen] = useState(false)
   const specsId = useId()
+  const { t } = useLanguage()
 
   function requestQuote() {
     window.dispatchEvent(new CustomEvent(RFQ_SELECT_EVENT, { detail: product.group }))
@@ -75,7 +77,7 @@ export function ProductCard({ product }: { product: Product }) {
             aria-controls={specsId}
             className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-md border border-border px-3 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground"
           >
-            Teknik Detaylar
+            {t('product.btn_specs') || 'Teknik Detaylar'}
             <ChevronDown className={cn('size-4 transition-transform', open && 'rotate-180')} aria-hidden="true" />
           </button>
           <button
@@ -83,7 +85,7 @@ export function ProductCard({ product }: { product: Product }) {
             onClick={requestQuote}
             className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-md bg-accent px-3 py-2.5 text-sm font-semibold text-accent-foreground transition-colors hover:bg-amber-accent"
           >
-            Teklif İste
+            {t('product.btn_quote') || 'Teklif İste'}
             <Send className="size-3.5" aria-hidden="true" />
           </button>
         </div>

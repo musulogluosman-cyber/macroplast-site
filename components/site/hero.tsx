@@ -1,13 +1,30 @@
+'use client'
+
 import Image from 'next/image'
 import { ArrowRight, Thermometer, ScanLine, Timer } from 'lucide-react'
-
-const badges = [
-  { icon: Thermometer, title: 'Yüksek Sıcaklık Dayanımı', detail: '-200°C / +260°C' },
-  { icon: ScanLine, title: 'Tornada Hassas İmalat', detail: '±0,1 mm tolerans' },
-  { icon: Timer, title: 'Hızlı Termin & Kalite Güvencesi', detail: 'Lot bazlı izlenebilirlik' },
-]
+import { useLanguage } from '../../app/LanguageContext'
 
 export function Hero() {
+  const { t } = useLanguage()
+
+  const badges = [
+    { 
+      icon: Thermometer, 
+      title: t('hero.badge1.title') || 'Yüksek Sıcaklık Dayanımı', 
+      detail: t('hero.badge1.detail') || '-200°C / +260°C' 
+    },
+    { 
+      icon: ScanLine, 
+      title: t('hero.badge2.title') || 'Tornada Hassas İmalat', 
+      detail: t('hero.badge2.detail') || '±0,1 mm tolerans' 
+    },
+    { 
+      icon: Timer, 
+      title: t('hero.badge3.title') || 'Hızlı Termin & Kalite Güvencesi', 
+      detail: t('hero.badge3.detail') || 'Lot bazlı izlenebilirlik' 
+    },
+  ]
+
   return (
     <section id="anasayfa" className="relative overflow-hidden bg-navy text-navy-foreground">
       <div
@@ -18,28 +35,29 @@ export function Hero() {
         <div>
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-navy-foreground/15 bg-navy-foreground/5 px-3 py-1 font-mono text-xs uppercase tracking-widest text-amber-accent">
             <span className="size-1.5 rounded-full bg-amber-accent" aria-hidden="true" />
-            PTFE Sızdırmazlık Uzmanı
+            {t('hero.tagline') || 'PTFE Sızdırmazlık Uzmanı'}
           </p>
           <h1 className="text-balance text-4xl font-bold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
-            Endüstriyel Sızdırmazlıkta <span className="text-amber-accent">Üstün Mühendislik</span> ve Güven
+            {t('hero.title_prefix') || 'Endüstriyel Sızdırmazlıkta'}{' '}
+            <span className="text-amber-accent">{t('hero.title_highlight') || 'Üstün Mühendislik'}</span>{' '}
+            {t('hero.title_suffix') || 've Güven'}
           </h1>
           <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-navy-foreground/75">
-            Yüksek sıcaklık, kimyasal direnç ve aşırı basınç gerektiren endüstriyel tesisler için %100 saf PTFE
-            conta çözümleri üretiyoruz.
+            {t('hero.description') || 'Yüksek sıcaklık, kimyasal direnç ve aşırı basınç gerektiren endüstriyel tesisler için %100 saf PTFE conta çözümleri üretiyoruz.'}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="#urunler"
               className="group inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-colors hover:bg-amber-accent"
             >
-              Ürün Kataloğunu İncele
+              {t('hero.btn_catalog') || 'Ürün Kataloğunu İncele'}
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
             </a>
             <a
               href="#iletisim"
               className="inline-flex items-center justify-center rounded-md border border-navy-foreground/30 px-6 py-3.5 text-sm font-semibold text-navy-foreground transition-colors hover:border-navy-foreground/60 hover:bg-navy-foreground/5"
             >
-              Teknik Danışmanlık Alın
+              {t('hero.btn_consulting') || 'Teknik Danışmanlık Alın'}
             </a>
           </div>
         </div>
@@ -56,8 +74,12 @@ export function Hero() {
             />
           </div>
           <div className="absolute -bottom-6 left-4 rounded-lg border border-navy-foreground/15 bg-navy/80 px-4 py-3 backdrop-blur-md sm:left-6">
-            <p className="font-mono text-[0.7rem] uppercase tracking-widest text-navy-foreground/60">Malzeme</p>
-            <p className="text-sm font-semibold">%100 Saf PTFE</p>
+            <p className="font-mono text-[0.7rem] uppercase tracking-widest text-navy-foreground/60">
+              {t('hero.material_label') || 'Malzeme'}
+            </p>
+            <p className="text-sm font-semibold">
+              {t('hero.material_value') || '%100 Saf PTFE'}
+            </p>
           </div>
         </div>
       </div>

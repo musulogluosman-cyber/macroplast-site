@@ -127,6 +127,7 @@
     "company": "Company Name",
     "company_placeholder": "Company Title",
     "email": "Email",
+    "email_placeholder": "example@company.com",
     "phone": "Phone",
     "product_group": "Product Group of Interest",
     "select_product": "Select a product group",
